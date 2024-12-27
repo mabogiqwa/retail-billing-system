@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 
 screen=Tk()
 screen.title('Retail Billing System')
-screen.geometry('1290x730')
+screen.geometry('1320x730')
 
 #Adds that small image at the top of the window
 billing=Image.open("images/billing icon.jpg")
@@ -88,7 +88,7 @@ searchButton.grid(row=0,column=6,padx=10)
 
 #Frame for various product entries
 productsFrame=Frame(screen)
-productsFrame.pack(pady=10,anchor='nw')
+productsFrame.pack(pady=7,anchor='nw')
 
 #Cosmetics block of code
 cosmeticsFrame=LabelFrame(productsFrame,
@@ -104,7 +104,8 @@ cosmeticsFrame.grid(row=0,column=0)
 #Elements in frame
 
 #Bath soap label and entry
-bathSoapLabel=Label(cosmeticsFrame,text='Bath Soap:',font=('Helvetica',15,'bold'),
+bathSoapLabel=Label(cosmeticsFrame,text='Bath Soap:',
+                    font=('Helvetica',15,'bold'),
                     bg='#36454F',
                     fg='white'
                    )
@@ -289,7 +290,7 @@ specialityMeatsEntry.grid(row=4,column=1,pady=9,padx=2)
 
 #Smoked meats
 smokedMeatsLabel=Label(meatFrame,
-                       text='Smoked meats:',
+                       text='Smoked Meats:',
                        font=('Helvetica',15,'bold'),
                        bg='#36454F',
                        fg='white'
@@ -421,8 +422,91 @@ billingAreaLabel=Label(billingFrame,
                        )
 billingAreaLabel.pack(fill=X)
 
-textArea=Text(billingFrame,height=20,width=39)
+scrollBar=Scrollbar(billingFrame,orient=VERTICAL)
+scrollBar.pack(side=RIGHT,fill=Y)
+
+textArea=Text(billingFrame,height=20,width=38,yscrollcommand=scrollBar.set)
 textArea.pack()
+scrollBar.config(command=textArea.yview)
+
+billMenuFrame=LabelFrame(screen,
+                         text='Bill Menu',
+                         font=('Helvetica',15,'bold'),
+                         fg='gold',
+                         bd=8,
+                         relief=GROOVE,
+                         bg='#36454F'
+                         )
+billMenuFrame.pack(anchor='nw')
+
+cosmeticPriceLabel=Label(billMenuFrame,
+                         text='Cosmetic Price:',
+                         font=('Helvetica',15,'bold'),
+                         bg='#36454F',
+                         fg='white'
+                   )
+cosmeticPriceLabel.grid(row=5,
+                        column=0,
+                        pady=6,
+                        padx=10,
+                        sticky='w')
+
+cosmeticPriceEntry=Entry(billMenuFrame,
+                        font=('Helvetica',15,'bold'),
+                        width=10,
+                        bd=5
+                        )
+cosmeticPriceEntry.grid(row=5,
+                        column=1,
+                        pady=6,
+                        padx=10)
+
+meatPriceLabel=Label(billMenuFrame,
+                         text='Cosmetic Price:',
+                         font=('Helvetica',15,'bold'),
+                         bg='#36454F',
+                         fg='white'
+                   )
+meatPriceLabel.grid(row=6,
+                    column=0,
+                    pady=6,
+                    padx=10,
+                    sticky='w')
+
+meatPriceEntry=Entry(billMenuFrame,
+                        font=('Helvetica',15,'bold'),
+                        width=10,
+                        bd=5
+                        )
+
+meatPriceEntry.grid(row=6,
+                    column=1,
+                    pady=6,
+                    padx=10
+                    )
+
+beveragesPriceLabel=Label(billMenuFrame,
+                         text='Meat Price:',
+                         font=('Helvetica',15,'bold'),
+                         bg='#36454F',
+                         fg='white'
+                         )
+beveragesPriceLabel.grid(row=7,
+                         column=0,
+                         pady=6,
+                         padx=10,
+                         sticky='w'
+                         )
+
+beveragesPriceEntry=Entry(billMenuFrame,
+                        font=('Helvetica',15,'bold'),
+                        width=10,
+                        bd=5
+                        )
+beveragesPriceEntry.grid(row=7,
+                         column=1,
+                         pady=6,
+                         padx=10
+                         )
 
 screen.mainloop()
-
