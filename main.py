@@ -82,7 +82,46 @@ searchButton=Button(customerDetailsFrame,
 searchButton.grid(row=0,column=6,padx=10)
 
 productsFrame=Frame(screen)
-productsFrame.pack()
+productsFrame.pack(pady=10)
 
+cosmeticsFrame=LabelFrame(productsFrame,
+                          text='Cosmetics',
+                          font=('Helvetica',15,'bold'),
+                          bg='#36454F',
+                          fg='#FFEB99',
+                          bd=8,
+                          relief=GROOVE
+                          )
+cosmeticsFrame.grid(row=0, column=0)
+
+#Elements in frame
+
+#Bath soap label and entry
+bathSoapLabel=Label(cosmeticsFrame,text='Bath Soap',font=('Helvetica',15,'bold'),
+                    bg='#36454F',
+                    fg='white'
+                   )
+bathSoapLabel.grid(row=0, column=0, pady=9, padx=10)
+
+bathSoapEntry=Entry(cosmeticsFrame,
+                    font=('Helvetica',15,'bold'),
+                    width=10,
+                    bd=5)
+bathSoapEntry.grid(row=0, column=1, pady=9, padx=10)
+
+#Cleanser soap label and entry
+cleanserLabel=Label(cosmeticsFrame,
+                    text='Cleanser',
+                    font=('Helvetica',15,'bold'),
+                    bg='#36454F',
+                    fg='white'
+                   )
+cleanserLabel.grid(row=1, column=0, pady=9, padx=10)
+cleanserEntry=Entry(cosmeticsFrame,
+                    font=('Helvetica',15,'bold'),
+                    width=10,
+                    bd=5
+                   )
+cleanserEntry.grid(row=1, column=1, pady=9, padx=10)
 
 screen.mainloop()
