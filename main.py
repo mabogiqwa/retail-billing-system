@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 
 screen=Tk()
 screen.title('Retail Billing System')
-screen.geometry('1270x685')
+screen.geometry('1290x730')
 
 #Adds that small image at the top of the window
 billing=Image.open("images/billing icon.jpg")
@@ -34,6 +34,7 @@ customerDetailsFrame=LabelFrame(screen,
                                                                 #called 'Customer Details'
 customerDetailsFrame.pack(fill=X)
 
+#Contact details
 nameLabel=Label(customerDetailsFrame,
                 text='Name:',
                 font=('Helvetica',15,'bold'),
@@ -42,6 +43,7 @@ nameLabel=Label(customerDetailsFrame,
                )
 nameLabel.grid(row=0,column=0,padx=20,pady=2)
 
+#Create an entry box for the name
 nameEntry=Entry(customerDetailsFrame,font=('Helvetica',15),bd=7,width=18)
 nameEntry.grid(row=0,column=1,padx=8)
 
@@ -62,16 +64,18 @@ billLabel=Label(customerDetailsFrame,
                 text='Bill Number:',
                 font=('Helvetica',15,'bold'),
                 bg='#36454F',
-                fg='white')
+                fg='white'
+                )
 billLabel.grid(row=0,column=4,padx=20,pady=2)
 
 billEntry=Entry(customerDetailsFrame,
                 font=('arial',15,'bold'),
                 bd=7,
                 width=18
-                )
+                ) 
 billEntry.grid(row=0,column=5,padx=8)
 
+#Search button
 searchButton=Button(customerDetailsFrame,
                     text='SEARCH',
                     font=('Helvetica',8,'bold'),
@@ -81,9 +85,12 @@ searchButton=Button(customerDetailsFrame,
                     )
 searchButton.grid(row=0,column=6,padx=10)
 
-productsFrame=Frame(screen)
-productsFrame.pack(pady=10)
 
+#Frame for various product entries
+productsFrame=Frame(screen)
+productsFrame.pack(pady=10,anchor='nw')
+
+#Cosmetics block of code
 cosmeticsFrame=LabelFrame(productsFrame,
                           text='Cosmetics',
                           font=('Helvetica',15,'bold'),
@@ -92,7 +99,7 @@ cosmeticsFrame=LabelFrame(productsFrame,
                           bd=8,
                           relief=GROOVE
                           )
-cosmeticsFrame.grid(row=0, column=0)
+cosmeticsFrame.grid(row=0,column=0)
 
 #Elements in frame
 
@@ -267,7 +274,7 @@ frozenSeaFoodEntry.grid(row=3,column=1,pady=9,padx=2)
 #Speciality meats
 specialityMeatsLabel=Label(meatFrame,
                            font=('Helvetica',15,'bold'),
-                           text='Offal & Speciality Meats:',
+                           text='Speciality Meats:',
                            bg='#36454F',
                            fg='white'
                           )
@@ -296,6 +303,7 @@ smokedMeatsLabel=Entry(meatFrame,
                        )
 smokedMeatsLabel.grid(row=5,column=1,pady=9,padx=2)
 
+#Here
 #Beverages block of code (Frame)
 beveragesFrame=LabelFrame(productsFrame,
                            text='Beverages',
@@ -305,7 +313,7 @@ beveragesFrame=LabelFrame(productsFrame,
                            bd=8,
                            relief=GROOVE
                            )
-beveragesFrame.grid(row=0,column=2)
+beveragesFrame.grid(row=0,column=3)
 
 #Water entry
 waterLabel=Label(beveragesFrame,
@@ -314,14 +322,14 @@ waterLabel=Label(beveragesFrame,
                  bg='#36454F',
                  fg='white',
                  )
-waterLabel.grid(row=0,column=0,pady=9,padx=2)
+waterLabel.grid(row=0,column=0,pady=9,padx=10)
 
 waterEntry=Entry(beveragesFrame,
                  font=('Helvetica',15,'bold'),
                  width=10,
                  bd=5
                  )
-waterEntry.grid(row=0,column=1,pady=9,padx=2)
+waterEntry.grid(row=0,column=1,pady=9,padx=10)
 
 #Soft drinks entry
 softDrinksLabel=Label(beveragesFrame,
@@ -330,22 +338,91 @@ softDrinksLabel=Label(beveragesFrame,
                       bg='#36454F',
                       fg='white'
                       )
-softDrinksLabel.grid(row=1,column=0,pady=9,padx=2)
+softDrinksLabel.grid(row=1,column=0,pady=9,padx=10)
 
 softDrinksEntry=Entry(beveragesFrame,
                       font=('Helvetica',15,'bold'),
                       width=10,
                       bd=5
                       )
-softDrinksEntry.grid(row=1,column=1,pady=9,padx=2)
+softDrinksEntry.grid(row=1,column=1,pady=9,padx=10)
 
 #Dairy beverages
 dairyLabel=Label(beveragesFrame,
-                 text='Dairy Beverages:',
+                 text='Dairy Drinks:',
                  font=('Helvetica',15,'bold'),
                  bg='#36454F',
                  fg='white'
                  )
-dairyLabel.grid(row=2,column=0,pady=9,padx=2)
+dairyLabel.grid(row=2,column=0,pady=9,padx=10)
+
+dairyEntry=Entry(beveragesFrame,
+                 font=('Helvetica',15,'bold'),
+                 width=10,
+                 bd=5
+                )
+dairyEntry.grid(row=2,column=1,pady=9,padx=10)
+
+#Alcoholic beverages
+alcoholicBeveragesLabel=Label(beveragesFrame,
+                 text='Alcoholic Drinks:',
+                 font=('Helvetica',15,'bold'),
+                 bg='#36454F',
+                 fg='white'
+                 )
+alcoholicBeveragesLabel.grid(row=3,column=0,pady=9,padx=10)
+
+alcoholicBeveragesEntry=Entry(beveragesFrame,
+                 font=('Helvetica',15,'bold'),
+                 width=10,
+                 bd=5
+                )
+alcoholicBeveragesEntry.grid(row=3,column=1,pady=9,padx=10)                     
+
+#Health and Wellness Drinks
+healthDrinksLabel=Label(beveragesFrame,
+                        text='Wellness Drinks:',
+                        font=('Helvetica',15,'bold'),
+                        bg='#36454F',
+                        fg='white'
+                        )
+healthDrinksLabel.grid(row=4,column=0,pady=9,padx=10)
+
+healthDrinksEntry=Entry(beveragesFrame,
+                        font=('Helvetica',15,'bold'),
+                        width=10,
+                        bd=5
+                        )
+healthDrinksEntry.grid(row=4,column=1,pady=9,padx=10)
+
+#Coffee-based Drinks
+coffeeBeveragesLabel=Label(beveragesFrame,
+                           text='Coffee Drinks:',
+                           font=('Helvetica',15,'bold'),
+                           bg='#36454F',
+                           fg='white'
+                           )
+coffeeBeveragesLabel.grid(row=5,column=0,pady=9,padx=10)
+
+coffeeBeveragesEntry=Entry(beveragesFrame,
+                           font=('Helvetica',15,'bold'),
+                           width=10,
+                           bd=5
+                           )
+coffeeBeveragesEntry.grid(row=5,column=1,pady=9,padx=10)
+
+billingFrame=Frame(productsFrame,bd=4,relief=GROOVE)
+billingFrame.grid(row=0,column=4)
+
+billingAreaLabel=Label(billingFrame,
+                       text='Label Area',
+                       font=('Helvetica',15,'bold'),
+                       relief=GROOVE
+                       )
+billingAreaLabel.pack(fill=X)
+
+textArea=Text(billingFrame,height=20,width=39)
+textArea.pack()
 
 screen.mainloop()
+
