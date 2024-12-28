@@ -461,6 +461,14 @@ cosmeticPriceEntry.grid(row=5,
                         pady=6,
                         padx=10)
 
+cosmeticTaxLabel=Label(billMenuFrame,
+                       text='Cosmetic Tax:',
+                       font=('Helvetica',15,'bold'),
+                       bg='#36454F',
+                       fg='white'
+                       )
+cosmeticTaxLabel.grid(row=5,column=2,pady=6,padx=10)
+
 meatPriceLabel=Label(billMenuFrame,
                          text='Cosmetic Price:',
                          font=('Helvetica',15,'bold'),
