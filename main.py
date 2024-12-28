@@ -1,7 +1,6 @@
 from tkinter import * #Imports all classes and methods within tkinter(GUI objects)
 from PIL import Image, ImageTk
 
-
 screen=Tk()
 screen.title('Retail Billing System')
 screen.geometry('1320x730')
@@ -80,11 +79,11 @@ billEntry.grid(row=0,column=5,padx=8)
 searchButton=Button(customerDetailsFrame,
                     text='SEARCH',
                     font=('Helvetica',8,'bold'),
-                    width=20,
+                    width=28,
                     height=2,
                     relief=GROOVE
                     )
-searchButton.grid(row=0,column=6,padx=10)
+searchButton.grid(row=0,column=6,padx=18)
 
 
 #Frame for various product entries
@@ -117,6 +116,7 @@ bathSoapEntry=Entry(cosmeticsFrame,
                     width=10,
                     bd=5)
 bathSoapEntry.grid(row=0,column=1,pady=9,padx=2)
+bathSoapEntry.insert(0,0.0)
 
 #Cleanser soap label and entry
 cleanserLabel=Label(cosmeticsFrame,
@@ -133,6 +133,7 @@ cleanserEntry=Entry(cosmeticsFrame,
                     bd=5
                    )
 cleanserEntry.grid(row=1,column=1,pady=9,padx=2)
+cleanserEntry.insert(0,0.0)
 
 #Cologne label and entry
 cologneLabel=Label(cosmeticsFrame,
@@ -149,6 +150,7 @@ cologneEntry=Entry(cosmeticsFrame,
                    bd=5
                   )
 cologneEntry.grid(row=2,column=1,pady=9,padx=2)
+cologneEntry.insert(0,0.0)
 
 #Body lotion label and entry
 bodyLotionLabel=Label(cosmeticsFrame,
@@ -159,12 +161,13 @@ bodyLotionLabel=Label(cosmeticsFrame,
                 )
 bodyLotionLabel.grid(row=3,column=0,pady=9,padx=2)
 
-bodyLotionLabelEntry=Entry(cosmeticsFrame,
+bodyLotionEntry=Entry(cosmeticsFrame,
                            font=('Helvetica',15,'bold'),
                            width=10,
                            bd=5
                            )
-bodyLotionLabelEntry.grid(row=3,column=1,pady=9,padx=10)
+bodyLotionEntry.grid(row=3,column=1,pady=9,padx=10)
+bodyLotionEntry.insert(0,0.0)
 
 #Shampoo label and entry
 shampooLabel=Label(cosmeticsFrame,
@@ -181,6 +184,7 @@ shampooLabelEntry=Entry(cosmeticsFrame,
                         bd=5
                         )
 shampooLabelEntry.grid(row=4,column=1,pady=9,padx=2)
+shampooLabelEntry.insert(0,0.0)
 
 #Toothpaste
 toothPasteLabel=Label(cosmeticsFrame,
@@ -197,6 +201,7 @@ toothPasteEntry=Entry(cosmeticsFrame,
                       bd=5
                       )
 toothPasteEntry.grid(row=5,column=1,pady=9,padx=2)
+toothPasteEntry.insert(0,0.0)
 
 #Meat and Sea-food block of code
 meatFrame=LabelFrame(productsFrame,
@@ -224,6 +229,7 @@ freshMeatEntry=Entry(meatFrame,
                      bd=5
                      )
 freshMeatEntry.grid(row=0,column=1,pady=9,padx=10)
+freshMeatEntry.insert(0,0.0)
 
 #Processed meat
 processedMeatLabel=Label(meatFrame,
@@ -240,6 +246,7 @@ processedMeatEntry=Entry(meatFrame,
                               bd=5
                               )
 processedMeatEntry.grid(row=1,column=1,pady=9,padx=2)
+processedMeatEntry.insert(0,0.0)
 
 #Fresh seafood
 freshSeaFoodLabel=Label(meatFrame,
@@ -256,6 +263,7 @@ freshSeaFoodEntry=Entry(meatFrame,
                         bd=5
                         )
 freshSeaFoodEntry.grid(row=2,column=1,pady=9,padx=2)
+freshSeaFoodEntry.insert(0,0.0)
                 
 #Frozen seafood
 frozenSeaFoodLabel=Label(meatFrame,
@@ -272,6 +280,7 @@ frozenSeaFoodEntry=Entry(meatFrame,
                          bd=5
                          )
 frozenSeaFoodEntry.grid(row=3,column=1,pady=9,padx=2)
+frozenSeaFoodEntry.insert(0,0.0)
 
 #Speciality meats
 specialityMeatsLabel=Label(meatFrame,
@@ -288,6 +297,7 @@ specialityMeatsEntry=Entry(meatFrame,
                            bd=5
                            )
 specialityMeatsEntry.grid(row=4,column=1,pady=9,padx=2)
+specialityMeatsEntry.insert(0,0.0)
 
 #Smoked meats
 smokedMeatsLabel=Label(meatFrame,
@@ -304,6 +314,7 @@ smokedMeatsLabel=Entry(meatFrame,
                        bd=5
                        )
 smokedMeatsLabel.grid(row=5,column=1,pady=9,padx=2)
+smokedMeatsLabel.insert(0,0.0)
 
 #Here
 #Beverages block of code (Frame)
@@ -332,6 +343,7 @@ waterEntry=Entry(beveragesFrame,
                  bd=5
                  )
 waterEntry.grid(row=0,column=1,pady=9,padx=10)
+waterEntry.insert(0,0.0)
 
 #Soft drinks entry
 softDrinksLabel=Label(beveragesFrame,
@@ -348,6 +360,7 @@ softDrinksEntry=Entry(beveragesFrame,
                       bd=5
                       )
 softDrinksEntry.grid(row=1,column=1,pady=9,padx=10)
+softDrinksEntry.insert(0,0.0)
 
 #Dairy beverages
 dairyLabel=Label(beveragesFrame,
@@ -364,6 +377,7 @@ dairyEntry=Entry(beveragesFrame,
                  bd=5
                 )
 dairyEntry.grid(row=2,column=1,pady=9,padx=10)
+dairyEntry.insert(0,0.0)
 
 #Alcoholic beverages
 alcoholicBeveragesLabel=Label(beveragesFrame,
@@ -379,7 +393,8 @@ alcoholicBeveragesEntry=Entry(beveragesFrame,
                  width=10,
                  bd=5
                 )
-alcoholicBeveragesEntry.grid(row=3,column=1,pady=9,padx=10)                     
+alcoholicBeveragesEntry.grid(row=3,column=1,pady=9,padx=10)
+alcoholicBeveragesEntry.insert(0,0.0)
 
 #Health and Wellness Drinks
 healthDrinksLabel=Label(beveragesFrame,
@@ -396,6 +411,7 @@ healthDrinksEntry=Entry(beveragesFrame,
                         bd=5
                         )
 healthDrinksEntry.grid(row=4,column=1,pady=9,padx=10)
+healthDrinksEntry.insert(0,0.0)
 
 #Coffee-based Drinks
 coffeeBeveragesLabel=Label(beveragesFrame,
@@ -412,6 +428,7 @@ coffeeBeveragesEntry=Entry(beveragesFrame,
                            bd=5
                            )
 coffeeBeveragesEntry.grid(row=5,column=1,pady=9,padx=10)
+coffeeBeveragesEntry.insert(0,0.0)
 
 billingFrame=Frame(productsFrame,bd=4,relief=GROOVE)
 billingFrame.grid(row=0,column=4)
@@ -446,21 +463,16 @@ cosmeticPriceLabel=Label(billMenuFrame,
                          bg='#36454F',
                          fg='white'
                    )
-cosmeticPriceLabel.grid(row=5,
-                        column=0,
-                        pady=6,
-                        padx=10,
-                        sticky='w')
+cosmeticPriceLabel.grid(row=5,column=0,pady=6,padx=10,sticky='w')
 
 cosmeticPriceEntry=Entry(billMenuFrame,
                         font=('Helvetica',15,'bold'),
                         width=10,
                         bd=5
                         )
-cosmeticPriceEntry.grid(row=5,
-                        column=1,
-                        pady=6,
-                        padx=10)
+cosmeticPriceEntry.grid(row=5,column=1,pady=6,padx=10)
+cosmeticPriceEntry.insert(0,0.0)
+
 
 cosmeticTaxLabel=Label(billMenuFrame,
                        text='Cosmetic Tax:',
@@ -476,6 +488,7 @@ cosmeticTaxEntry=Entry(billMenuFrame,
                        bd=5
                        )
 cosmeticTaxEntry.grid(row=5,column=3,pady=6,padx=10)
+cosmeticTaxEntry.insert(0,0.0)
 
 meatPriceLabel=Label(billMenuFrame,
                      text='Cosmetic Price:',
@@ -494,6 +507,7 @@ meatPriceEntry=Entry(billMenuFrame,
                         width=10,
                         bd=5
                         )
+meatPriceEntry.insert(0,0.0)
 
 meatPriceEntry.grid(row=6,
                     column=1,
@@ -515,6 +529,7 @@ meatTaxEntry=Entry(billMenuFrame,
                    bd=5
                    )
 meatTaxEntry.grid(row=6,column=3,pady=6,padx=10)
+meatTaxEntry.insert(0,0.0)
                    
 beveragesPriceLabel=Label(billMenuFrame,
                          text='Meat Price:',
@@ -522,23 +537,15 @@ beveragesPriceLabel=Label(billMenuFrame,
                          bg='#36454F',
                          fg='white'
                          )
-beveragesPriceLabel.grid(row=7,
-                         column=0,
-                         pady=6,
-                         padx=10,
-                         sticky='w'
-                         )
+beveragesPriceLabel.grid(row=7,column=0,pady=6,padx=10,sticky='w')
 
 beveragesPriceEntry=Entry(billMenuFrame,
                         font=('Helvetica',15,'bold'),
                         width=10,
                         bd=5
                         )
-beveragesPriceEntry.grid(row=7,
-                         column=1,
-                         pady=6,
-                         padx=10
-                         )
+beveragesPriceEntry.grid(row=7,column=1,pady=6,padx=10)
+beveragesPriceEntry.insert(0,0.0)
 
 beveragesTaxLabel=Label(billMenuFrame,
                         text='Beverages Tax:',
@@ -554,6 +561,7 @@ beveragesTaxEntry=Entry(billMenuFrame,
                         bd=5
                         )
 beveragesTaxEntry.grid(row=7,column=3,pady=6,padx=10)
+beveragesTaxEntry.insert(0,0.0)
 
 #buttons
 #Totality of bills
@@ -586,6 +594,7 @@ emailButton=Button(billMenuFrame,
                    width=15,
                    relief=GROOVE
                    )
+emailButton.grid(row=5,column=6,pady=6,padx=10)
 
 printButton=Button(billMenuFrame,
                    text='Print',
