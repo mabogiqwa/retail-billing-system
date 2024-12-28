@@ -583,5 +583,23 @@ emailButton=Button(billMenuFrame,
                    width=15
                    )
 
+printButton=Button(billMenuFrame,
+                   text='Print',
+                   font=('Helvetica',16,'bold'),
+                   bg='gray20',
+                   fg='white',
+                   width=15
+                   )
+printButton.grid(row=6,column=4,pady=6,padx=10)
+
+clearButton=Button(billMenuFrame,
+                   text='Clear',
+                   font=('Helvetica',16,'bold'),
+                   bg='gray20',
+                   fg='white',
+                   width=15
+                   )
+clearButton.grid(row=6,column=5,pady=6,padx=10)
+
 screen.mainloop()
 
