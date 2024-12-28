@@ -416,7 +416,7 @@ billingFrame=Frame(productsFrame,bd=4,relief=GROOVE)
 billingFrame.grid(row=0,column=4)
 
 billingAreaLabel=Label(billingFrame,
-                       text='Label Area',
+                       text='Bill',
                        font=('Helvetica',15,'bold'),
                        relief=GROOVE
                        )
@@ -469,12 +469,19 @@ cosmeticTaxLabel=Label(billMenuFrame,
                        )
 cosmeticTaxLabel.grid(row=5,column=2,pady=6,padx=10)
 
+cosmeticTaxEntry=Entry(billMenuFrame,
+                       font=('Helvetica',15,'bold'),
+                       width=10,
+                       bd=5
+                       )
+cosmeticTaxEntry.grid(row=5,column=3,pady=6,padx=10)
+
 meatPriceLabel=Label(billMenuFrame,
-                         text='Cosmetic Price:',
-                         font=('Helvetica',15,'bold'),
-                         bg='#36454F',
-                         fg='white'
-                   )
+                     text='Cosmetic Price:',
+                     font=('Helvetica',15,'bold'),
+                     bg='#36454F',
+                     fg='white'
+                     )
 meatPriceLabel.grid(row=6,
                     column=0,
                     pady=6,
@@ -493,6 +500,21 @@ meatPriceEntry.grid(row=6,
                     padx=10
                     )
 
+meatTaxLabel=Label(billMenuFrame,
+                   font=('Helvetica',15,'bold'),
+                   text='Meat Tax:',
+                   bg='#36454F',
+                   fg='white'
+                   )
+meatTaxLabel.grid(row=6,column=2,pady=6,padx=10)
+
+meatTaxEntry=Entry(billMenuFrame,
+                   font=('Helvetica',15,'bold'),
+                   width=10,
+                   bd=5
+                   )
+meatTaxEntry.grid(row=6,column=3,pady=6,padx=10)
+                   
 beveragesPriceLabel=Label(billMenuFrame,
                          text='Meat Price:',
                          font=('Helvetica',15,'bold'),
@@ -517,4 +539,20 @@ beveragesPriceEntry.grid(row=7,
                          padx=10
                          )
 
+beveragesTaxLabel=Label(billMenuFrame,
+                        text='Beverages Tax:',
+                        font=('Helvetica',15,'bold'),
+                        bg='#36454F',
+                        fg='white'
+                        )
+beveragesTaxLabel.grid(row=7,column=2,pady=6,padx=10)
+
+beveragesTaxEntry=Entry(billMenuFrame,
+                        font=('Helvetica',15,'bold'),
+                        width=10,
+                        bd=5
+                        )
+beveragesTaxEntry.grid(row=7,column=3,pady=6,padx=10)
+
 screen.mainloop()
+
