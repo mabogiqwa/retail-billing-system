@@ -1,6 +1,7 @@
 from tkinter import * #Imports all classes and methods within tkinter(GUI objects)
 from PIL import Image, ImageTk
 
+
 screen=Tk()
 screen.title('Retail Billing System')
 screen.geometry('1320x730')
