@@ -554,5 +554,34 @@ beveragesTaxEntry=Entry(billMenuFrame,
                         )
 beveragesTaxEntry.grid(row=7,column=3,pady=6,padx=10)
 
+#buttons
+#Totality of bills
+totalButton=Button(billMenuFrame,
+                   text='Total',
+                   font=('Helvetica',16,'bold'),
+                   bg='gray20',
+                   fg='white',
+                   width=15
+                   )
+totalButton.grid(row=5,column=4,pady=6,padx=10)
+
+#display bill
+billButton=Button(billMenuFrame,
+                  text='Bill',
+                  font=('Helvetica',16,'bold'),
+                  bg='gray20',
+                  fg='white',
+                  width=15
+                  )
+billButton.grid(row=5,column=5,pady=6,padx=10)
+
+emailButton=Button(billMenuFrame,
+                   text='Email',
+                   font=('Helvetica',16,'bold'),
+                   bg='gray20',
+                   fg='white',
+                   width=15
+                   )
+
 screen.mainloop()
 
