@@ -1,5 +1,43 @@
 from tkinter import * #Imports all classes and methods within tkinter(GUI objects)
 from PIL import Image, ImageTk
+import utilities
+
+def total():
+    #Variables related to totaling the cosmetic products
+    soapPrice=float(bathSoapEntry.get())*19
+    cleanserPrice=float(cleanserEntry.get())*330
+    colognePrice=float(cologneEntry.get())*900
+    bodyLotionPrice=float(bodyLotionEntry.get())*100
+    toothPastePrice=float(toothPasteEntry.get())*67
+
+    totalCosmeticPrice = soapPrice+cleanserPrice+colognePrice+bodyLotionPrice+toothPastePrice
+    cosmeticPriceEntry.delete(0, END)  # Clear existing value
+    cosmeticPriceEntry.insert(0,f'R{totalCosmeticPrice:.2f}')
+
+    #Variables related to totaling the different meats
+    freshMeatPrice=float(freshMeatEntry.get())*80
+    processedMeatPrice=float(processedMeatEntry.get())*75
+    freshSeaFoodPrice=float(freshSeaFoodEntry.get())*120
+    frozenSeaFoodPrice=float(frozenSeaFoodEntry.get())*105
+    specialityMeatPrice=float(specialityMeatsEntry.get())*115
+    smokedMeatPrice=float(smokedMeatsEntry.get())*55
+
+    totalMeatPrice = freshMeatPrice+processedMeatPrice+freshSeaFoodPrice+frozenSeaFoodPrice+specialityMeatPrice+smokedMeatPrice
+    meatPriceEntry.delete(0, END)  # Clear existing value
+    meatPriceEntry.insert(0,f'R{totalMeatPrice:.2f}')
+
+    #Variables related to totaling the different beverages
+    waterPrice=float(waterEntry.get())*10
+    softDrinksPrice=float(softDrinksEntry.get())*14
+    dairyPrice=float(dairyEntry.get())*23
+    alcoholicBevPrice=float(alcoholicBeveragesEntry.get())*56
+    wellnessBevPrice=float(healthDrinksEntry.get())*45
+    coffeeBevPrice=float(coffeeBeveragesEntry.get())*22
+
+    totalBeveragePrice = waterPrice+softDrinksPrice+dairyPrice+alcoholicBevPrice+wellnessBevPrice+coffeeBevPrice
+    beveragesPriceEntry.delete(0, END)  # Clear existing value
+    beveragesPriceEntry.insert(0,f'R{totalBeveragePrice:.2f}')
+
 
 screen=Tk()
 screen.title('Retail Billing System')
@@ -116,7 +154,7 @@ bathSoapEntry=Entry(cosmeticsFrame,
                     width=10,
                     bd=5)
 bathSoapEntry.grid(row=0,column=1,pady=9,padx=2)
-bathSoapEntry.insert(0,0.0)
+bathSoapEntry.insert(0,0)
 
 #Cleanser soap label and entry
 cleanserLabel=Label(cosmeticsFrame,
@@ -133,7 +171,7 @@ cleanserEntry=Entry(cosmeticsFrame,
                     bd=5
                    )
 cleanserEntry.grid(row=1,column=1,pady=9,padx=2)
-cleanserEntry.insert(0,0.0)
+cleanserEntry.insert(0,0)
 
 #Cologne label and entry
 cologneLabel=Label(cosmeticsFrame,
@@ -150,7 +188,7 @@ cologneEntry=Entry(cosmeticsFrame,
                    bd=5
                   )
 cologneEntry.grid(row=2,column=1,pady=9,padx=2)
-cologneEntry.insert(0,0.0)
+cologneEntry.insert(0,0)
 
 #Body lotion label and entry
 bodyLotionLabel=Label(cosmeticsFrame,
@@ -167,7 +205,7 @@ bodyLotionEntry=Entry(cosmeticsFrame,
                            bd=5
                            )
 bodyLotionEntry.grid(row=3,column=1,pady=9,padx=10)
-bodyLotionEntry.insert(0,0.0)
+bodyLotionEntry.insert(0,0)
 
 #Shampoo label and entry
 shampooLabel=Label(cosmeticsFrame,
@@ -184,7 +222,7 @@ shampooLabelEntry=Entry(cosmeticsFrame,
                         bd=5
                         )
 shampooLabelEntry.grid(row=4,column=1,pady=9,padx=2)
-shampooLabelEntry.insert(0,0.0)
+shampooLabelEntry.insert(0,0)
 
 #Toothpaste
 toothPasteLabel=Label(cosmeticsFrame,
@@ -201,7 +239,7 @@ toothPasteEntry=Entry(cosmeticsFrame,
                       bd=5
                       )
 toothPasteEntry.grid(row=5,column=1,pady=9,padx=2)
-toothPasteEntry.insert(0,0.0)
+toothPasteEntry.insert(0,0)
 
 #Meat and Sea-food block of code
 meatFrame=LabelFrame(productsFrame,
@@ -229,7 +267,7 @@ freshMeatEntry=Entry(meatFrame,
                      bd=5
                      )
 freshMeatEntry.grid(row=0,column=1,pady=9,padx=10)
-freshMeatEntry.insert(0,0.0)
+freshMeatEntry.insert(0,0)
 
 #Processed meat
 processedMeatLabel=Label(meatFrame,
@@ -246,7 +284,7 @@ processedMeatEntry=Entry(meatFrame,
                               bd=5
                               )
 processedMeatEntry.grid(row=1,column=1,pady=9,padx=2)
-processedMeatEntry.insert(0,0.0)
+processedMeatEntry.insert(0,0)
 
 #Fresh seafood
 freshSeaFoodLabel=Label(meatFrame,
@@ -263,7 +301,7 @@ freshSeaFoodEntry=Entry(meatFrame,
                         bd=5
                         )
 freshSeaFoodEntry.grid(row=2,column=1,pady=9,padx=2)
-freshSeaFoodEntry.insert(0,0.0)
+freshSeaFoodEntry.insert(0,0)
                 
 #Frozen seafood
 frozenSeaFoodLabel=Label(meatFrame,
@@ -280,7 +318,7 @@ frozenSeaFoodEntry=Entry(meatFrame,
                          bd=5
                          )
 frozenSeaFoodEntry.grid(row=3,column=1,pady=9,padx=2)
-frozenSeaFoodEntry.insert(0,0.0)
+frozenSeaFoodEntry.insert(0,0)
 
 #Speciality meats
 specialityMeatsLabel=Label(meatFrame,
@@ -297,7 +335,7 @@ specialityMeatsEntry=Entry(meatFrame,
                            bd=5
                            )
 specialityMeatsEntry.grid(row=4,column=1,pady=9,padx=2)
-specialityMeatsEntry.insert(0,0.0)
+specialityMeatsEntry.insert(0,0)
 
 #Smoked meats
 smokedMeatsLabel=Label(meatFrame,
@@ -308,13 +346,13 @@ smokedMeatsLabel=Label(meatFrame,
                        )
 smokedMeatsLabel.grid(row=5,column=0,pady=9,padx=2)
 
-smokedMeatsLabel=Entry(meatFrame,
+smokedMeatsEntry=Entry(meatFrame,
                        font=('Helvetica',15,'bold'),
                        width=10,
                        bd=5
                        )
-smokedMeatsLabel.grid(row=5,column=1,pady=9,padx=2)
-smokedMeatsLabel.insert(0,0.0)
+smokedMeatsEntry.grid(row=5,column=1,pady=9,padx=2)
+smokedMeatsEntry.insert(0,0)
 
 #Here
 #Beverages block of code (Frame)
@@ -343,7 +381,7 @@ waterEntry=Entry(beveragesFrame,
                  bd=5
                  )
 waterEntry.grid(row=0,column=1,pady=9,padx=10)
-waterEntry.insert(0,0.0)
+waterEntry.insert(0,0)
 
 #Soft drinks entry
 softDrinksLabel=Label(beveragesFrame,
@@ -360,7 +398,7 @@ softDrinksEntry=Entry(beveragesFrame,
                       bd=5
                       )
 softDrinksEntry.grid(row=1,column=1,pady=9,padx=10)
-softDrinksEntry.insert(0,0.0)
+softDrinksEntry.insert(0,0)
 
 #Dairy beverages
 dairyLabel=Label(beveragesFrame,
@@ -377,7 +415,7 @@ dairyEntry=Entry(beveragesFrame,
                  bd=5
                 )
 dairyEntry.grid(row=2,column=1,pady=9,padx=10)
-dairyEntry.insert(0,0.0)
+dairyEntry.insert(0,0)
 
 #Alcoholic beverages
 alcoholicBeveragesLabel=Label(beveragesFrame,
@@ -394,7 +432,7 @@ alcoholicBeveragesEntry=Entry(beveragesFrame,
                  bd=5
                 )
 alcoholicBeveragesEntry.grid(row=3,column=1,pady=9,padx=10)
-alcoholicBeveragesEntry.insert(0,0.0)
+alcoholicBeveragesEntry.insert(0,0)
 
 #Health and Wellness Drinks
 healthDrinksLabel=Label(beveragesFrame,
@@ -411,7 +449,7 @@ healthDrinksEntry=Entry(beveragesFrame,
                         bd=5
                         )
 healthDrinksEntry.grid(row=4,column=1,pady=9,padx=10)
-healthDrinksEntry.insert(0,0.0)
+healthDrinksEntry.insert(0,0)
 
 #Coffee-based Drinks
 coffeeBeveragesLabel=Label(beveragesFrame,
@@ -428,7 +466,7 @@ coffeeBeveragesEntry=Entry(beveragesFrame,
                            bd=5
                            )
 coffeeBeveragesEntry.grid(row=5,column=1,pady=9,padx=10)
-coffeeBeveragesEntry.insert(0,0.0)
+coffeeBeveragesEntry.insert(0,0)
 
 billingFrame=Frame(productsFrame,bd=4,relief=GROOVE)
 billingFrame.grid(row=0,column=4)
@@ -571,7 +609,8 @@ totalButton=Button(billMenuFrame,
                    bg='gray20',
                    fg='white',
                    width=15,
-                   relief=GROOVE
+                   relief=GROOVE,
+                   command=total
                    )
 totalButton.grid(row=5,column=4,pady=6,padx=10)
 
