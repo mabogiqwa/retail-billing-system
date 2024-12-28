@@ -561,7 +561,8 @@ totalButton=Button(billMenuFrame,
                    font=('Helvetica',16,'bold'),
                    bg='gray20',
                    fg='white',
-                   width=15
+                   width=15,
+                   relief=GROOVE
                    )
 totalButton.grid(row=5,column=4,pady=6,padx=10)
 
@@ -571,7 +572,8 @@ billButton=Button(billMenuFrame,
                   font=('Helvetica',16,'bold'),
                   bg='gray20',
                   fg='white',
-                  width=15
+                  width=15,
+                  relief=GROOVE
                   )
 billButton.grid(row=5,column=5,pady=6,padx=10)
 
@@ -580,7 +582,8 @@ emailButton=Button(billMenuFrame,
                    font=('Helvetica',16,'bold'),
                    bg='gray20',
                    fg='white',
-                   width=15
+                   width=15,
+                   relief=GROOVE
                    )
 
 printButton=Button(billMenuFrame,
@@ -588,7 +591,8 @@ printButton=Button(billMenuFrame,
                    font=('Helvetica',16,'bold'),
                    bg='gray20',
                    fg='white',
-                   width=15
+                   width=15,
+                   relief=GROOVE
                    )
 printButton.grid(row=6,column=4,pady=6,padx=10)
 
@@ -597,7 +601,8 @@ clearButton=Button(billMenuFrame,
                    font=('Helvetica',16,'bold'),
                    bg='gray20',
                    fg='white',
-                   width=15
+                   width=15,
+                   relief=GROOVE
                    )
 clearButton.grid(row=6,column=5,pady=6,padx=10)
 
