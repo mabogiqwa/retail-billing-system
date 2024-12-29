@@ -1,3 +1,4 @@
+from tkinter import messagebox
 from tkinter import * #Imports all classes and methods within tkinter(GUI objects)
 from PIL import Image, ImageTk
 import utilities
