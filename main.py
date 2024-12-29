@@ -15,7 +15,6 @@ def get_the_bill():
         if beveragesPriceEntry.get()=='R0.00':
             messagebox.showerror('Error','No product to bill!')
     else:
-        # Add your billing logic here
         textArea.delete(1.0, END)
         textArea.insert(END, '\tWelcome to Retail Billing System\n')
         textArea.insert(END, f'\nBill Number: {billEntry.get()}')
