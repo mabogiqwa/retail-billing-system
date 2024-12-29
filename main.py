@@ -39,6 +39,7 @@ def get_the_bill():
         textArea.insert(END, f'\nMeat Tax: \t\t{meatTaxEntry.get()}')
         textArea.insert(END, f'\nBeverages Price: \t\t{beveragesPriceEntry.get()}')
         textArea.insert(END, f'\nBeverages Tax: \t\t{beveragesTaxEntry.get()}')
+        
 def total():
     #Variables related to totaling the cosmetic products
     soapPrice=float(bathSoapEntry.get())*19
