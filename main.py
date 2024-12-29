@@ -2,6 +2,13 @@ from tkinter import * #Imports all classes and methods within tkinter(GUI object
 from PIL import Image, ImageTk
 import utilities
 
+#An alternative function name such as 'bill' creates a logical error, not sure why
+def get_the_bill():
+    if nameEntry.get()=='':
+        messagebox.showerror('Error','Name is missing!')
+    elif phoneEntry.get()=='':
+        messagebox.showerror('Error','Phone number is missing!')
+    
 def total():
     #Variables related to totaling the cosmetic products
     soapPrice=float(bathSoapEntry.get())*19
@@ -632,7 +639,8 @@ billButton=Button(billMenuFrame,
                   bg='gray20',
                   fg='white',
                   width=15,
-                  relief=GROOVE
+                  relief=GROOVE,
+                  command=get_the_bill
                   )
 billButton.grid(row=5,column=5,pady=6,padx=10)
 
