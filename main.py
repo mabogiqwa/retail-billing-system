@@ -1,7 +1,6 @@
 from tkinter import messagebox
 from tkinter import * #Imports all classes and methods within tkinter(GUI objects)
 from PIL import Image, ImageTk
-import utilities
 
 #An alternative function name such as 'bill' creates a logical error, not sure why
 def get_the_bill():
