@@ -8,6 +8,9 @@ def get_the_bill():
         messagebox.showerror('Error','Name is missing!')
     elif phoneEntry.get()=='':
         messagebox.showerror('Error','Phone number is missing!')
+    elif cosmeticPriceEntry.get()=='0.0' and meatPriceEntry.get()=='0.0':
+        if beveragesPriceEntry.get()=='0.0':
+            messagebox.showerror('Error','No product to bill!')
     
 def total():
     #Variables related to totaling the cosmetic products
