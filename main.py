@@ -11,6 +11,9 @@ def get_the_bill():
     elif cosmeticPriceEntry.get()=='0.0' and meatPriceEntry.get()=='0.0':
         if beveragesPriceEntry.get()=='0.0':
             messagebox.showerror('Error','No product to bill!')
+    elif cosmeticPriceEntry.get()=='R0.00' and meatPriceEntry.get()=='R0.00':
+        if beveragesPriceEntry.get()=='R0.00':
+            messagebox.showerror('Error','No product to bill!')
     
 def total():
     #Variables related to totaling the cosmetic products
