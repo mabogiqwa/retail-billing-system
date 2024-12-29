@@ -14,6 +14,10 @@ def total():
     cosmeticPriceEntry.delete(0, END)  # Clear existing value
     cosmeticPriceEntry.insert(0,f'R{totalCosmeticPrice:.2f}')
 
+    cosmeticTax = totalCosmeticPrice * 0.05
+    cosmeticTaxEntry.delete(0, END)
+    cosmeticTaxEntry.insert(0,f'{cosmeticTax:.2f}')
+
     #Variables related to totaling the different meats
     freshMeatPrice=float(freshMeatEntry.get())*80
     processedMeatPrice=float(processedMeatEntry.get())*75
