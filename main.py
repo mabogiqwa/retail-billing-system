@@ -14,7 +14,31 @@ def get_the_bill():
     elif cosmeticPriceEntry.get()=='R0.00' and meatPriceEntry.get()=='R0.00':
         if beveragesPriceEntry.get()=='R0.00':
             messagebox.showerror('Error','No product to bill!')
-    
+    else:
+        # Add your billing logic here
+        textArea.delete(1.0, END)
+        textArea.insert(END, '\tWelcome to Retail Billing System\n')
+        textArea.insert(END, f'\nBill Number: {billEntry.get()}')
+        textArea.insert(END, f'\nCustomer Name: {nameEntry.get()}')
+        textArea.insert(END, f'\nPhone Number: {phoneEntry.get()}')
+        textArea.insert(END, f'\n======================================')
+        textArea.insert(END, '\nProduct\t\tQty\tPrice')
+        textArea.insert(END, f'\n======================================')
+        
+        # Add product details if quantity > 0
+        if float(bathSoapEntry.get()) > 0:
+            textArea.insert(END, f'\nBath Soap\t\t{bathSoapEntry.get()}\tR{float(bathSoapEntry.get())*19}')
+        if float(cleanserEntry.get()) > 0:
+            textArea.insert(END, f'\nCleanser\t\t{cleanserEntry.get()}\tR{float(cleanserEntry.get())*330}')
+        # Add similar entries for other products...
+        
+        textArea.insert(END, f'\n======================================')
+        textArea.insert(END, f'\nCosmetics Price: \t\t{cosmeticPriceEntry.get()}')
+        textArea.insert(END, f'\nCosmetics Tax: \t\t{cosmeticTaxEntry.get()}')
+        textArea.insert(END, f'\nMeat Price: \t\t{meatPriceEntry.get()}')
+        textArea.insert(END, f'\nMeat Tax: \t\t{meatTaxEntry.get()}')
+        textArea.insert(END, f'\nBeverages Price: \t\t{beveragesPriceEntry.get()}')
+        textArea.insert(END, f'\nBeverages Tax: \t\t{beveragesTaxEntry.get()}')
 def total():
     #Variables related to totaling the cosmetic products
     soapPrice=float(bathSoapEntry.get())*19
