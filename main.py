@@ -30,6 +30,10 @@ def total():
     meatPriceEntry.delete(0, END)  # Clear existing value
     meatPriceEntry.insert(0,f'R{totalMeatPrice:.2f}')
 
+    meatTax = totalMeatPrice * 0.04
+    meatTaxEntry.delete(0, END)
+    meatTaxEntry.insert(0,f'{meatTax:.2f}')
+
     #Variables related to totaling the different beverages
     waterPrice=float(waterEntry.get())*10
     softDrinksPrice=float(softDrinksEntry.get())*14
@@ -42,6 +46,9 @@ def total():
     beveragesPriceEntry.delete(0, END)  # Clear existing value
     beveragesPriceEntry.insert(0,f'R{totalBeveragePrice:.2f}')
 
+    beveragesTax = totalBeveragePrice * 0.04
+    beveragesTaxEntry.delete(0, END)
+    beveragesTaxEntry.insert(0,f'{beveragesTax:.2f}')
 
 screen=Tk()
 screen.title('Retail Billing System')
