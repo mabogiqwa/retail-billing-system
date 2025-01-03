@@ -31,6 +31,8 @@ def get_the_bill():
             textArea.insert(END, f'\nCleanser\t\t{cleanserEntry.get()}\tR{float(cleanserEntry.get())*330}')
         # Add similar entries for other products...
         
+        total = int(cosmeticPriceEntry.get()) + int(cosmeticTaxEntry.get()) + int(meatPriceEntry.get()) + int(meatTaxEntry.get()) + int(beveragesPriceEntry.get()) + int(beveragesTaxEntry.get())
+        
         textArea.insert(END, f'\n======================================')
         textArea.insert(END, f'\nCosmetics Price: \t\t{cosmeticPriceEntry.get()}')
         textArea.insert(END, f'\nCosmetics Tax: \t\t{cosmeticTaxEntry.get()}')
@@ -38,6 +40,7 @@ def get_the_bill():
         textArea.insert(END, f'\nMeat Tax: \t\t{meatTaxEntry.get()}')
         textArea.insert(END, f'\nBeverages Price: \t\t{beveragesPriceEntry.get()}')
         textArea.insert(END, f'\nBeverages Tax: \t\t{beveragesTaxEntry.get()}')
+        textArea.insert(END, f'\n\nTotal: \t\t{total}')
         
 def total():
     #Variables related to totaling the cosmetic products
