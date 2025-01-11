@@ -90,6 +90,9 @@ def total():
     beveragesTaxEntry.delete(0, END)
     beveragesTaxEntry.insert(0,f'{beveragesTax:.2f}')
 
+def get_email():
+    
+
 screen=Tk()
 screen.title('Retail Billing System')
 screen.geometry('1320x730')
